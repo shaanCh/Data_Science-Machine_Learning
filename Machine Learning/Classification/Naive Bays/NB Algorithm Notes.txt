@@ -1,0 +1,6 @@
+Find probability of Features to Label
+        P(X1 | y) ---> X1 is feature and y is label
+Find probability of Label
+        P(y | X) --> y is occurance out of whole label
+
+label * all features probabilities == liklihood
