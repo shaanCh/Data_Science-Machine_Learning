@@ -18,3 +18,10 @@ class Network():
     def sigmoid(self, x):
         return 1 / 1 + (np.exp(-x))  #logistic function, is the function y=1/(1+e^(-x))
     
+    def forward(self, X):
+        self.z1 = np.dot(X, self.W1) + self.b1 
+        self.a1 = self.sigmoid(self.z1)
+        self.z2 = np.dot(self.a1, self.W2) + self.b2
+        self.a2 = self.sigmoid(self.z2)
+        return self.a1, self.a2
+    
