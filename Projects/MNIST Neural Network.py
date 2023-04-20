@@ -1,4 +1,5 @@
 import numpy as np
+#https://learn.microsoft.com/en-us/windows/ai/windows-ml/tutorials/pytorch-train-model
 
 
 class Network():
