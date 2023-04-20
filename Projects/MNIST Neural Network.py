@@ -15,4 +15,6 @@ class Network():
         self.W2 = np.random.randn(self.hiddenSize, self.outputSize) #2d array with dimension (hidden rows x Output columns)
         self.b2 = np.zeros((1, self.outputSize)) #2D array with dimension (1 row x output column)
 
-
+    def sigmoid(self, x):
+        return 1 / 1 + (np.exp(-x))  #logistic function, is the function y=1/(1+e^(-x))
+    
