@@ -25,3 +25,9 @@ class Network():
         self.a2 = self.sigmoid(self.z2)
         return self.a1, self.a2
     
+    def loss(self, X, y):
+        y_pred = self.forward(X)
+        loss = np.mean((y_pred - y)**2)
+
+    def backpropogation(self, X):
+    
