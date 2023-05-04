@@ -59,20 +59,3 @@ class Network():
             print(f'Epoch: {i}, loss: {loss}')
     
 # Load the MNIST dataset and preprocess it
-digits = load_digits()
-X, y = digits.data, digits.target
-X = StandardScaler().fit_transform(X)
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Create an instance of the NeuralNetwork class with 64 hidden units
-nn = Network(inputSize=X_train.shape[1], hiddenSize=64, outputSize=len(np.unique(y_train)))
-
-# Train the model for 1000 epochs with a learning rate of 0.1
-nn.train(X = X_train, y = y_train, epochs=1000, learning_rate=0.1)
-
-# Make predictions on the testing set and compute the accuracy
-y_pred = nn.predict(X_test)
-accuracy = np.mean(y_pred == y_test)
-print("Accuracy:", accuracy)
