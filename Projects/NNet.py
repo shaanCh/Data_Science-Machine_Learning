@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
-import matplotlib.pyplot as plt
 
 # Define the transformation to apply to the input data
 transform = transforms.Compose([
@@ -35,7 +34,7 @@ model = Net()
 
 # Define the loss function and optimizer
 criterion = nn.NLLLoss()
-optimizer = optim.SGD(model.parameters(), lr=0.01)
+optimizer = optim.SGD(model.parameters(), lr=0.07)
 
 # Train the model
 for epoch in range(10):
@@ -68,43 +67,3 @@ with torch.no_grad():
 print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct / total))
 
 
-
-# Evaluate the model
-model.eval()
-test_loss = 0
-correct = 0
-misclassified_images = []
-misclassified_targets = []
-misclassified_predictions = []
-with torch.no_grad():
-    for data, target in test_loader:
-        data = data.view(-1, 784)
-        output = model(data)
-        test_loss += criterion(output, target).item()
-        pred = output.argmax(dim=1, keepdim=True)
-        correct += pred.eq(target.view_as(pred)).sum().item()
-
-        misclassified_mask = pred.eq(target.view_as(pred)) == False
-        misclassified_images.extend(data[misclassified_mask])
-        misclassified_targets.extend(target.view_as(pred)[misclassified_mask])
-        misclassified_predictions.extend(pred[misclassified_mask])
-
-test_loss /= len(test_loader.dataset)
-
-print('Test Loss: {:.6f}, Test Accuracy: {:.2f}%'.format(
-    test_loss, 100. * correct / len(test_loader.dataset)))
-
-# Plot misclassified images
-num_samples = min(10, len(misclassified_images))
-fig, axes = plt.subplots(1, num_samples, figsize=(15, 3))
-
-for i, ax in enumerate(axes):
-    image = misclassified_images[i].view(28, 28)
-    target = misclassified_targets[i].item()
-    prediction = misclassified_predictions[i].item()
-
-    ax.imshow(image, cmap='gray')
-    ax.set_title(f'Target: {target}, Pred: {prediction}')
-    ax.axis('off')
-
-plt.show()
