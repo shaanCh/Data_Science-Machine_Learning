@@ -43,4 +43,8 @@ Neural Network
 
 Check out the final results --> [Neural Network ML](https://docs.google.com/presentation/d/1F0M3ScykOlyLaXFUuKTZlfZwOkHQnDHcVsGXnw2Y3IQ/edit?usp=sharing)
 
+Chess
+- Using Data Science to determine which opening chess moves are statistically more likely to win a game
+
+
 
