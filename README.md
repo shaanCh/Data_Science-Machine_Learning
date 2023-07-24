@@ -35,4 +35,12 @@
           - Grouping unlabeled data into clusters of similar qualities in order to determine the correct label
                - Ex: Companies can target specific groups of customers for different campaigns
 
+## Projects
+Neural Network
+- MNIST dataset of 60,000 small square 28×28 pixel grayscale images of handwritten single digits between 0 and 9
+
+**Task**: classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9
+
+Check out the final results --> [Neural Network ML](https://docs.google.com/presentation/d/1F0M3ScykOlyLaXFUuKTZlfZwOkHQnDHcVsGXnw2Y3IQ/edit?usp=sharing)
+
 
