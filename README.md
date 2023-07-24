@@ -22,6 +22,12 @@
           - Ex: Predicting the popularity of a song based on its artist, producer, tempo, variance, beat, etc.
 ### Unsupervised Learning - teaching/training a model with unknown data
 - Reinforcement Learning
-- K-means Clustering
+     - a self-teaching model that essentially learns by trial and error or a reward system
+     - Q-Learning
+          - Uses a specific formula that will find the best course of action, given the current state of the agent
+               - Ex: Training a model to navigate through a 5x5 image of a maze
+     - K-means Clustering
+          - Grouping unlabeled data into clusters of similar qualities in order to determine the correct label
+               - Ex: 
 
 
